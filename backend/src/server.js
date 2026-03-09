@@ -15,9 +15,9 @@ const app = express();
 const __dirname = path.resolve();
 
 app.use(express.json());
-app.use("/api/inngest", serve({ client: inngest, funcitons }));
-
 app.use(clerkMiddleware());
+
+app.use("/api/inngest", serve({ client: inngest, funcitons }));
 
 app.get("/api/health", (req, res) => {
   res.status(200).json({ message: "Success" });
